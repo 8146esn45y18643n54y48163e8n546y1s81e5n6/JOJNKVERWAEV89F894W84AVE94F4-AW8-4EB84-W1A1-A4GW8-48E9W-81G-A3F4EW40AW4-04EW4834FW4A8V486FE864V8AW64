@@ -1,4 +1,3 @@
---slap battles
 getgenv().IsOrixonVerified = true
 
 local Glove_Remotes = {
