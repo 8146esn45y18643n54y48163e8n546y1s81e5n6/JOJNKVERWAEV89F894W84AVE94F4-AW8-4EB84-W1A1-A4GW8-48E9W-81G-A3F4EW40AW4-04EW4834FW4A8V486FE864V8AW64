@@ -115,7 +115,13 @@ setmetatable(Glove_Remotes, {
     end
 })
 
-local run_on_teleport = syn.queue_on_teleport or queue_on_teleport
+local run_on_teleport = nil
+if syn.queue_on_teleport then
+	run_on_teleport = syn.queue_on_teleport
+end
+if queue_on_teleport then
+	run_on_teleport = queue_on_teleport
+end
 
 getgenv().KillAura = false
 getgenv().SilentAim = false
@@ -243,6 +249,7 @@ end)
 
 GetGlovesTab:addLabel("Get Gloves")
 GetGlovesTab:addButton("Get Elude", function()
+if run_on_teleport ~= nil then
     game:GetService("TeleportService"):Teleport(11828384869, game:GetService("Players").LocalPlayer)
     run_on_teleport([[
         repeat task.wait() until game:IsLoaded() or game.IsLoaded;
@@ -260,6 +267,7 @@ GetGlovesTab:addButton("Get Elude", function()
         task.wait();
         firetouchinterest(game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart"), game:GetService("Workspace"):FindFirstChild("Ruins"):FindFirstChild("Elude"):FindFirstChild("Glove"), 1);
     ]])
+    end
 end)
 GetGlovesTab:addToggle("Auto get Tycoon Glove", false, function()
     if getgenv().AutoTycoonGlove == true then
